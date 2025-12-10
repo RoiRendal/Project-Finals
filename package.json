@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-all": "npm install --prefix frontend && npm install --prefix backend",
-    "install-s": "npm install --prefix IT314-Finals && npm install --prefix backend",
-    "install-c": "npm install --prefix IT314-Finals && npm install --prefix frontend",
+    "install-s": "npm install && npm install --prefix backend",
+    "install-c": "npm install && npm install --prefix frontend",
     "server": "npm run dev --prefix backend",
     "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
