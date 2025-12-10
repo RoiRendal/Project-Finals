@@ -4,6 +4,7 @@ import CatDetail from './pages/CatDetail';
 
 function App() {
   return (
+    /* One Parent Element ONLY */
     
     // "min-h-screen" makes it so the background will always be seen in the entire page, I think.
     <div className="min-h-screen bg-stone-100 text-stone-800">

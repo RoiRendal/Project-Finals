@@ -1,6 +1,6 @@
 function CatDetail() {
     return (
-        /* One Parent Element ONLY */
+      /* One Parent Element ONLY */
         <div></div>
     );
 }
