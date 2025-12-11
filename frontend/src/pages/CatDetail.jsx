@@ -35,7 +35,7 @@ function CatDetail() {
         &larr; Back to Gallery
       </Link>
 
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-lg">
 
         {/* Hero Image */}
         <div className="h-64 md:h-96 w-full relative">
