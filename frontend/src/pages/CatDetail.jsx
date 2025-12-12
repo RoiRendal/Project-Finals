@@ -24,7 +24,6 @@ function CatDetail() {
   }
 
   return (
-    /* One Parent Element ONLY */
 
     <div className="max-w-4xl mx-auto">
       {/* Back Button */}
@@ -38,7 +37,7 @@ function CatDetail() {
       <div className="bg-white rounded-2xl shadow-lg">
 
         {/* Hero Image */}
-        <div className="h-64 md:h-96 w-full relative">
+        <div className="h-64 md:h-96 w-full relative rounded-t-2xl overflow-hidden">
           <img
             src={cat.image}
             alt={cat.name}
@@ -110,7 +109,7 @@ function CatDetail() {
 
           {/* Right: Info Box (Takes up 1 column space)
                      Dynamic Vital Stats                */}
-          <div className="order-first md:order-last sticky top-24">
+          <div className="order-first md:order-last md:sticky md:top-24">
             <div className="bg-stone-50 p-6 rounded-xl h-fit border border-stone-100">
               <h3 className="font-bold text-stone-400 uppercase tracking-widest text-sm mb-4">
                 Vital Stats
