@@ -35,7 +35,7 @@ function CatDetail() {
         {/* Hero Image */}
         <div className="h-64 md:h-96 w-full relative rounded-t-2xl overflow-hidden">
             <img src={cat.image} alt={cat.name} className="w-full h-full object-cover"/>
-            <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-6 pt-20">
+            <div className="absolute bottom-0 left-0 bg-linear-to-t from-black/70 to-transparent w-full p-6 pt-20">
                 <h1 className="text-4xl md:text-5xl font-bold text-white">{cat.name}</h1>
                 <p className="text-stone-200 italic text-xl">{cat.scientificName}</p>
             </div>
