@@ -1,6 +1,7 @@
 // src/pages/CatDetail.jsx
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { cats } from '../data/cats';
+import { cats as initialCats } from '../data/cats';
 
 // HELPER: Formats stats keys (biteForce -> Bite Force)
 const formatLabel = (key) => {
@@ -18,11 +19,19 @@ const generateSlug = (text) => {
 
 function CatDetail() {
   const { id } = useParams();
-  const cat = cats.find((c) => c.id === id);
+  const [cat, setCat] = useState(null);
 
-  if (!cat) {
-    return <div className="text-center text-2xl mt-10">Cat not found! 😿</div>;
-  }
+  useEffect(() => {
+    // 1. Load Custom Cats
+    const savedCats = JSON.parse(localStorage.getItem('customCats') || '[]');
+    const allCats = [...initialCats, ...savedCats];
+
+    // 2. Find the cat
+    const foundCat = allCats.find((c) => c.id === id);
+    setCat(foundCat);
+  }, [id]);
+
+  if (!cat) return <div>Loading...</div>; // Simple loading state
 
   return (
     <div className="max-w-4xl mx-auto">

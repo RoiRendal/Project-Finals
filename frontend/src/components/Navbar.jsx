@@ -18,6 +18,13 @@ function Navbar() {
             >
               Take Quiz
             </Link>
+
+            <Link 
+              to="/add" 
+              className="text-sm font-bold text-stone-600 hover:text-orange-600 transition-colors"
+            >
+              + Add Cat
+            </Link>
           </div>
           
         </div>

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import CatDetail from './pages/CatDetail';
 import Quiz from './pages/Quiz';
+import AddCat from './pages/AddCat';
 
 function App() {
   return (
@@ -20,15 +21,11 @@ function App() {
           <Route path="/"        element={<Home />}      />
           <Route path="/cat/:id" element={<CatDetail />} />
           <Route path="/quiz"    element={<Quiz />}      />
+          <Route path="/add"    element={<AddCat/>}     />
         </Routes>
       </div>
 
     </div>
-
-    /*
-    The site doesn't show anything for some reason.
-    Nevermind, it does. Just rerun the development server.
-    */
   );
 }
 
