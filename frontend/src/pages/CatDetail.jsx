@@ -1,6 +1,5 @@
-// src/pages/CatDetail.jsx
 import { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { cats as initialCats } from '../data/cats';
 
 const formatLabel = (key) => {
@@ -14,7 +13,7 @@ const generateSlug = (text) => {
 
 function CatDetail() {
   const { id } = useParams();
-  const navigate = useNavigate(); // Hook for redirection
+  const navigate = useNavigate();
   const [cat, setCat] = useState(null);
 
   useEffect(() => {
@@ -24,21 +23,16 @@ function CatDetail() {
     setCat(foundCat);
   }, [id]);
 
-  // DELETE FEATURE: The Logic
   const handleDelete = () => {
     const confirmDelete = window.confirm(`Are you sure you want to delete ${cat.name}? This cannot be undone.`);
     
     if (confirmDelete) {
-        // 1. Get current list
         const savedCats = JSON.parse(localStorage.getItem('customCats') || '[]');
         
-        // 2. Filter out THIS cat
         const updatedCats = savedCats.filter((c) => c.id !== id);
         
-        // 3. Save back to storage
         localStorage.setItem('customCats', JSON.stringify(updatedCats));
         
-        // 4. Redirect home
         alert('Cat deleted successfully.');
         navigate('/');
     }
@@ -49,22 +43,31 @@ function CatDetail() {
   return (
     <div className="max-w-4xl mx-auto">
       
-      {/* Header Area: Back Link + Delete Button */}
+      {/* Header Area */}
       <div className="flex justify-between items-center mb-6">
         <Link to="/" className="text-orange-600 hover:underline font-medium">
             &larr; Back to Gallery
         </Link>
 
-        {/* DELETE FEATURE: The Button 
-            Only show this if 'cat.isCustom' is true.
-        */}
+        {/* ACTIONS: Edit & Delete (Only for Custom Cats) */}
         {cat.isCustom && (
-            <button 
-                onClick={handleDelete}
-                className="bg-red-100 text-red-600 px-4 py-2 rounded-lg text-sm font-bold border border-red-200 hover:bg-red-600 hover:text-white transition-all"
-            >
-                🗑 Delete Cat
-            </button>
+            <div className="flex gap-3">
+                {/* EDIT BUTTON */}
+                <Link 
+                    to={`/edit/${cat.id}`}
+                    className="bg-blue-50 text-blue-600 px-4 py-2 rounded-lg text-sm font-bold border border-blue-200 hover:bg-blue-600 hover:text-white transition-all"
+                >
+                    ✎ Edit
+                </Link>
+
+                {/* DELETE BUTTON */}
+                <button 
+                    onClick={handleDelete}
+                    className="bg-red-50 text-red-600 px-4 py-2 rounded-lg text-sm font-bold border border-red-200 hover:bg-red-600 hover:text-white transition-all"
+                >
+                    🗑 Delete
+                </button>
+            </div>
         )}
       </div>
 
