@@ -1,17 +1,20 @@
+// src/pages/AddCat.jsx
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function AddCat() {
   const navigate = useNavigate();
   const { id } = useParams();
-  
   const isEditMode = Boolean(id);
+
+  // Toggle state: 'url' or 'upload'
+  const [imageMode, setImageMode] = useState('url');
 
   const [formData, setFormData] = useState({
     name: '',
     scientificName: '',
     description: '',
-    imageUrl: '',
+    imageUrl: '', // This will store either the http:// link OR the data:image string
     lifespan: '',
     speed: '',
     weight: '',
@@ -37,6 +40,10 @@ function AddCat() {
                 content: s.content.join('\n\n') 
             }))
         });
+        // Logic: If the saved image starts with 'data:', it's an upload. Otherwise it's a URL.
+        if (catToEdit.image.startsWith('data:')) {
+            setImageMode('upload');
+        }
       }
     }
   }, [id, isEditMode]);
@@ -45,7 +52,26 @@ function AddCat() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // --- NEW: FILE UPLOAD LOGIC ---
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        // LIMIT CHECK: 2MB limit (approx) to be safe with LocalStorage
+        if (file.size > 2000000) {
+            alert("File is too large! Please choose an image under 2MB.");
+            return;
+        }
 
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            // reader.result contains the Base64 string
+            setFormData({ ...formData, imageUrl: reader.result });
+        };
+        reader.readAsDataURL(file);
+    }
+  };
+
+  // --- DYNAMIC SECTIONS LOGIC (Same as before) ---
   const handleSectionChange = (index, field, value) => {
     const updatedSections = [...formData.sections];
     updatedSections[index][field] = value;
@@ -53,10 +79,7 @@ function AddCat() {
   };
 
   const addSection = () => {
-    setFormData({
-        ...formData,
-        sections: [...formData.sections, { title: '', content: '' }]
-    });
+    setFormData({ ...formData, sections: [...formData.sections, { title: '', content: '' }] });
   };
 
   const removeSection = (index) => {
@@ -64,8 +87,14 @@ function AddCat() {
     setFormData({ ...formData, sections: updatedSections });
   };
 
+  // --- SUBMIT LOGIC ---
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!formData.imageUrl) {
+        alert("Please provide an image URL or upload a file.");
+        return;
+    }
 
     const processedSections = formData.sections.map(s => ({
         title: s.title,
@@ -77,7 +106,7 @@ function AddCat() {
       name: formData.name,
       scientificName: formData.scientificName,
       description: formData.description,
-      image: formData.imageUrl || "https://placehold.co/600x400?text=No+Image",
+      image: formData.imageUrl, // Stores the URL or Base64 string
       stats: {
         lifespan: formData.lifespan,
         speed: formData.speed,
@@ -88,7 +117,6 @@ function AddCat() {
     };
 
     const savedCats = JSON.parse(localStorage.getItem('customCats') || '[]');
-    
     let newCatList;
     if (isEditMode) {
         newCatList = savedCats.map(c => c.id === id ? catObject : c);
@@ -96,10 +124,15 @@ function AddCat() {
         newCatList = [...savedCats, catObject];
     }
     
-    localStorage.setItem('customCats', JSON.stringify(newCatList));
-
-    alert(isEditMode ? 'Cat updated!' : 'Cat added!');
-    navigate(`/cat/${catObject.id}`); // Go straight to the page
+    try {
+        localStorage.setItem('customCats', JSON.stringify(newCatList));
+        alert(isEditMode ? 'Cat updated!' : 'Cat added!');
+        navigate(`/cat/${catObject.id}`);
+    } catch (error) {
+        // Catches "QuotaExceededError" if LocalStorage is full
+        alert("Storage full! The image might be too large. Try a smaller image.");
+        console.error(error);
+    }
   };
 
   return (
@@ -124,9 +157,62 @@ function AddCat() {
                 </div>
             </div>
 
+            {/* --- NEW: IMAGE HANDLING --- */}
             <div>
-                <label className="block text-sm font-bold text-stone-600 mb-2">Image URL</label>
-                <input required name="imageUrl" value={formData.imageUrl} onChange={handleChange} className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none" />
+                <label className="block text-sm font-bold text-stone-600 mb-2">Cat Image</label>
+                
+                {/* 1. Toggle Tabs */}
+                <div className="flex gap-4 mb-3">
+                    <button 
+                        type="button" 
+                        onClick={() => setImageMode('url')}
+                        className={`text-sm font-bold px-4 py-2 rounded-full transition-colors ${imageMode === 'url' ? 'bg-stone-800 text-white' : 'bg-stone-100 text-stone-500 hover:bg-stone-200'}`}
+                    >
+                        🔗 Image URL
+                    </button>
+                    <button 
+                        type="button" 
+                        onClick={() => setImageMode('upload')}
+                        className={`text-sm font-bold px-4 py-2 rounded-full transition-colors ${imageMode === 'upload' ? 'bg-stone-800 text-white' : 'bg-stone-100 text-stone-500 hover:bg-stone-200'}`}
+                    >
+                        📂 Upload File
+                    </button>
+                </div>
+
+                {/* 2. Inputs based on Toggle */}
+                <div className="p-4 bg-stone-50 rounded-xl border border-stone-200">
+                    {imageMode === 'url' ? (
+                        <input 
+                            name="imageUrl" 
+                            value={formData.imageUrl} 
+                            onChange={handleChange} 
+                            placeholder="https://example.com/image.jpg" 
+                            className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none bg-white" 
+                        />
+                    ) : (
+                        <div>
+                            <input 
+                                type="file" 
+                                accept="image/*"
+                                onChange={handleFileChange} 
+                                className="w-full text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-orange-100 file:text-orange-700 hover:file:bg-orange-200" 
+                            />
+                            <p className="text-xs text-stone-400 mt-2">Max size: 2MB (Storage limit)</p>
+                        </div>
+                    )}
+
+                    {/* 3. Image Preview */}
+                    {formData.imageUrl && (
+                        <div className="mt-4">
+                            <p className="text-xs uppercase font-bold text-stone-400 mb-2">Preview</p>
+                            <img 
+                                src={formData.imageUrl} 
+                                alt="Preview" 
+                                className="h-40 w-full object-cover rounded-lg border border-stone-300" 
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
 
             <div>
@@ -166,36 +252,17 @@ function AddCat() {
             <div className="space-y-6">
                 {formData.sections.map((section, index) => (
                     <div key={index} className="bg-stone-50 p-4 rounded-xl border border-stone-200 relative">
-                        {/* Remove Button (Top Right) */}
                         {formData.sections.length > 1 && (
-                            <button 
-                                type="button" 
-                                onClick={() => removeSection(index)}
-                                className="absolute top-2 right-2 text-red-500 hover:text-red-700 text-sm font-bold px-2"
-                            >
-                                ✕ Remove
-                            </button>
+                            <button type="button" onClick={() => removeSection(index)} className="absolute top-2 right-2 text-red-500 hover:text-red-700 text-sm font-bold px-2">✕ Remove</button>
                         )}
-                        
                         <div className="space-y-3">
                             <div>
                                 <label className="block text-xs uppercase font-bold text-stone-400 mb-1">Section Title</label>
-                                <input 
-                                    value={section.title}
-                                    onChange={(e) => handleSectionChange(index, 'title', e.target.value)}
-                                    placeholder="e.g. Hunting Habits"
-                                    className="w-full p-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-orange-500 outline-none" 
-                                />
+                                <input value={section.title} onChange={(e) => handleSectionChange(index, 'title', e.target.value)} placeholder="e.g. Hunting Habits" className="w-full p-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-orange-500 outline-none" />
                             </div>
                             <div>
                                 <label className="block text-xs uppercase font-bold text-stone-400 mb-1">Content (Paragraphs)</label>
-                                <textarea 
-                                    value={section.content}
-                                    onChange={(e) => handleSectionChange(index, 'content', e.target.value)}
-                                    rows="4"
-                                    placeholder="Type your paragraphs here. Press Enter to create a new paragraph."
-                                    className="w-full p-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-orange-500 outline-none"
-                                ></textarea>
+                                <textarea value={section.content} onChange={(e) => handleSectionChange(index, 'content', e.target.value)} rows="4" placeholder="Type here. Press Enter for new paragraphs." className="w-full p-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-orange-500 outline-none"></textarea>
                             </div>
                         </div>
                     </div>
