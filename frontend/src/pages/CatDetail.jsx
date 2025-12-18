@@ -110,14 +110,20 @@ function CatDetail() {
                 <div className="border-2 border-black overflow-hidden bg-gray-300">
                      <img src={cat.image} alt={cat.name} className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                 </div>
-                    <div className="flex justify-between items-start mt-2 font-mono text-xs text-gray-500">
-                        <span className="font-bold">FIG A. VISUAL RECORD</span>
-                            {cat.attribution && (
-                                <span className="text-right italic max-w-[50%]">
-                                    Source: {cat.attribution}
-                                </span>
-                            )}
-                    </div>
+
+                <div className="mt-2 font-mono text-[10px] md:text-xs text-gray-500 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+                    
+                    <span className="font-bold whitespace-nowrap shrink-0">
+                        FIG A. VISUAL RECORD
+                    </span>
+                    
+                    {cat.attribution && (
+                        <span className="italic sm:text-right wrap-break-word break-all leading-tight text-gray-400">
+                            Source: {cat.attribution}
+                        </span>
+                    )}
+                    
+                </div>
             </div>
 
             {/* OVERVIEW */}

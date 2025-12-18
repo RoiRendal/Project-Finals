@@ -89,7 +89,7 @@ export const cats = [
   },
   {
     id: "jaguar",
-    attribution: "By USFWS - U.S. Fish and Wildlife Service Digital Library System, Public Domain, https://commons.wikimedia.org/w/index.php?curid=314152",
+    attribution: "By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=87748243",
     name: "Jaguar",
     scientificName: "Panthera onca",
     description: "The jaguar is a large cat species and the only living member of the genus Panthera native to the Americas.",
