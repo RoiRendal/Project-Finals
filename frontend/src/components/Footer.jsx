@@ -19,9 +19,9 @@ function Footer() {
             </Link>
         </div>
 
-        {/* Quick Links */}
+        {/* Navigation & Contact */}
         <div>
-            <h4 className="font-bold mb-4 uppercase bg-black text-white inline-block px-2">Navigation</h4>
+            <h4 className="font-bold mb-4 uppercase bg-black text-white inline-block px-2">Directory</h4>
             <ul className="space-y-2 text-sm">
                 <li>
                     <Link to="/" className="hover:bg-blue-700 hover:text-white px-1 transition-colors">
@@ -38,11 +38,11 @@ function Footer() {
                         [Add New Entry]
                     </Link>
                 </li>
-                {/* Added explicit link here too */}
-                <li>
-                    <Link to="/about" className="hover:bg-blue-700 hover:text-white px-1 transition-colors">
-                        [About / Credits]
-                    </Link>
+                {/* CONTACT ENTRY */}
+                <li className="pt-2 border-t border-gray-400 mt-2">
+                    <a href="mailto:rendalroi@gmail.com" className="hover:bg-red-600 hover:text-white px-1 transition-colors font-bold">
+                        ✉ [Contact Admin]
+                    </a>
                 </li>
             </ul>
         </div>
@@ -53,7 +53,7 @@ function Footer() {
                 IT314 FINAL PROJECT
             </p>
             <p className="text-xs mt-1">
-                &copy; {currentYear} Student Name
+                &copy; {currentYear} Roi Rendal
             </p>
             <div className="mt-4 flex justify-end gap-2">
                 <div className="border border-black px-2 py-1 text-[10px] bg-yellow-200">

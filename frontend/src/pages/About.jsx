@@ -75,11 +75,8 @@ function About() {
 
                 {/* SOCIAL LINKS */}
                 <div className="flex gap-3 justify-center md:justify-start pt-4">
-                    <a href="https://github.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 border-2 border-black bg-white px-3 py-1 font-mono text-xs font-bold hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_#000] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]">
+                    <a href="https://github.com/RoiRendal" target="_blank" rel="noreferrer" className="flex items-center gap-2 border-2 border-black bg-white px-3 py-1 font-mono text-xs font-bold hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_#000] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]">
                         <span>📂</span> GITHUB
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 border-2 border-black bg-white px-3 py-1 font-mono text-xs font-bold hover:bg-blue-700 hover:text-white transition-colors shadow-[2px_2px_0_0_#000] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]">
-                        <span>💼</span> LINKEDIN
                     </a>
                 </div>
             </div>
