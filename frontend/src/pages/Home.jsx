@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cats as initialCats } from '../data/cats';
@@ -17,12 +16,11 @@ function Home() {
     <div className="space-y-12 pb-10">
       
       {/* 
-        === HERO SECTION: "THE BILLBOARD" === 
-        Style: High contrast, black borders, neon background.
+        === HERO SECTION: "THE BILLBOARD" ===
       */}
       <div className="border-4 border-black bg-cyan-300 p-6 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
         
-        {/* Decorative 'X' pattern in background (using Tailwind grid tricks) */}
+        {/* Decorative 'X' pattern in background */}
         <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
             <div className="text-9xl font-black font-mono leading-none">
                 X_X<br/>0_0<br/>^_^
@@ -85,11 +83,7 @@ function Home() {
             {allCats.map((cat) => (
             <Link to={`/cat/${cat.id}`} key={cat.id} className="group block h-full">
                 {/* 
-                   THE RETRO CARD 
-                   - No rounded corners
-                   - Thick borders
-                   - Hard Shadow
-                   - 'active' state moves the card down to simulate pressing a button
+                   === THE RETRO CARD ===
                 */}
                 <div className="bg-white border-4 border-black h-full flex flex-col shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200">
                 

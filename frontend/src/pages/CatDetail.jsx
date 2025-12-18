@@ -1,4 +1,3 @@
-// src/pages/CatDetail.jsx
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { cats as initialCats } from '../data/cats';
@@ -145,7 +144,7 @@ function CatDetail() {
                 );
             })}
 
-            {/* FUN FACTS (Sticky Note Style) */}
+            {/* FUN FACTS */}
             {cat.funFacts && (
                 <div id="fun-facts" className="bg-yellow-100 p-6 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] relative scroll-mt-32 transform -rotate-1">
                     {/* Tape visual */}
