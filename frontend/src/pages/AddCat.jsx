@@ -1,4 +1,3 @@
-// src/pages/AddCat.jsx
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -7,7 +6,6 @@ function AddCat() {
   const { id } = useParams();
   const isEditMode = Boolean(id);
 
-  // Toggle state: 'url' or 'upload'
   const [imageMode, setImageMode] = useState('url');
 
   const [formData, setFormData] = useState({
@@ -125,12 +123,10 @@ function AddCat() {
     }
   };
 
-  // UPDATED: Input class now has 'text-sm md:text-base' for better mobile rendering
   const inputClass = "w-full p-2 md:p-3 border-2 border-black font-mono text-sm md:text-base focus:bg-yellow-100 focus:outline-none shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none appearance-none";
   const labelClass = "block text-[10px] md:text-xs font-bold text-white bg-black inline-block px-2 py-1 mb-1 font-mono uppercase tracking-wider";
 
   return (
-    // UPDATED: Added px-4 wrapper to prevent edge touching on mobile
     <div className="max-w-4xl mx-auto pb-10 px-4 md:px-0">
       
       {/* HEADER */}
@@ -144,10 +140,10 @@ function AddCat() {
         </p>
       </div>
       
-      {/* FORM CONTAINER: Reduced padding on mobile (p-4 vs p-10) */}
+      {/* FORM CONTAINER */}
       <form onSubmit={handleSubmit} className="border-4 border-black bg-white p-4 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] space-y-8 md:space-y-10 relative">
         
-        {/* Screw Decorations: HIDDEN on mobile to save space */}
+        {/* Screw Decorations */}
         <div className="hidden md:flex absolute top-2 left-2 w-3 h-3 border border-black rounded-full items-center justify-center bg-gray-200"><div className="w-full h-[1px] bg-black rotate-45"></div></div>
         <div className="hidden md:flex absolute top-2 right-2 w-3 h-3 border border-black rounded-full items-center justify-center bg-gray-200"><div className="w-full h-[1px] bg-black rotate-45"></div></div>
         <div className="hidden md:flex absolute bottom-2 left-2 w-3 h-3 border border-black rounded-full items-center justify-center bg-gray-200"><div className="w-full h-[1px] bg-black rotate-45"></div></div>
@@ -198,7 +194,6 @@ function AddCat() {
                     {imageMode === 'url' ? (
                         <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} placeholder="HTTP://..." className={inputClass} />
                     ) : (
-                        // File Input: "w-full" ensures it doesn't overflow container
                         <input type="file" accept="image/*" onChange={handleFileChange} className="block w-full text-xs md:text-sm font-mono text-slate-500 file:mr-4 file:py-2 file:px-4 file:border-2 file:border-black file:text-xs file:font-bold file:bg-yellow-300 file:text-black hover:file:bg-yellow-400" />
                     )}
                     
