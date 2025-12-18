@@ -3,16 +3,13 @@ import { quizData } from '../data/questions';
 import { Link } from 'react-router-dom';
 
 function Quiz() {
-  // GAME STATES: 'menu', 'playing', 'finished', 'gameover'
   const [gameState, setGameState] = useState('menu');
   const [difficulty, setDifficulty] = useState('easy');
   const [currentQuestions, setCurrentQuestions] = useState([]);
   
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
   const [score, setScore] = useState(0);
-  const [lives, setLives] = useState(5); // Start with 5 hearts
-
-  // --- ACTIONS ---
+  const [lives, setLives] = useState(5);
 
   const startGame = (selectedDifficulty) => {
     setDifficulty(selectedDifficulty);
@@ -23,19 +20,26 @@ function Quiz() {
     setGameState('playing');
   };
 
+  // --- BUG FIX IS HERE ---
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
-      advanceGame();
+      advanceGame(); // Correct? Move on.
     } else {
       // Wrong Answer Logic
       const newLives = lives - 1;
       setLives(newLives);
+      
       if (newLives === 0) {
+        // No hearts left? Game Over immediately.
         setGameState('gameover');
+      } else {
+        // Hearts remaining? Take the hit, but MOVE ON.
+        advanceGame(); 
       }
     }
   };
+  // -----------------------
 
   const advanceGame = () => {
     const nextQuestion = currentQuestionIdx + 1;
