@@ -1,16 +1,15 @@
 // src/App.jsx
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import CatDetail from './pages/CatDetail';
-import Quiz from './pages/Quiz';
-import AddCat from './pages/AddCat';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import CatDetail from './pages/CatDetail';
+import AddCat from './pages/AddCat';
+import Quiz from './pages/Quiz';
 
 function App() {
   return (
-    // CHANGE 1: Font is now 'font-serif'. Background is a classic 'bg-yellow-50' (paper feel).
-    // CHANGE 2: Added a 'border-x-4 border-black' container to make it look like a document.
     <div className="min-h-screen bg-yellow-50 font-serif text-black selection:bg-black selection:text-white flex flex-col">
       
       <Navbar />
@@ -24,6 +23,7 @@ function App() {
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/add" element={<AddCat />} />
             <Route path="/edit/:id" element={<AddCat />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </div>

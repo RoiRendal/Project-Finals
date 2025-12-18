@@ -7,14 +7,16 @@ function Footer() {
     <footer className="bg-stone-200 border-t-4 border-black text-black py-10 mt-auto font-mono">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        {/* Brand */}
-        <div className="border-2 border-black p-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            <h3 className="text-xl font-bold mb-4 uppercase underline decoration-2 decoration-black underline-offset-4">
-                About This Site
-            </h3>
-            <p className="text-sm leading-relaxed">
-                A static repository of feline knowledge. Optimized for Netscape Navigator and Internet Explorer 4.0.
-            </p>
+        {/* Brand / About Link */}
+        <div className="border-2 border-black p-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+            <Link to="/about" className="block h-full">
+                <h3 className="text-xl font-bold mb-4 uppercase underline decoration-2 decoration-black underline-offset-4 cursor-pointer hover:text-blue-700">
+                    System Info (?)
+                </h3>
+                <p className="text-sm leading-relaxed cursor-pointer">
+                    Click here to view system documentation, mission statement, and developer credits.
+                </p>
+            </Link>
         </div>
 
         {/* Quick Links */}
@@ -36,6 +38,12 @@ function Footer() {
                         [Add New Entry]
                     </Link>
                 </li>
+                {/* Added explicit link here too */}
+                <li>
+                    <Link to="/about" className="hover:bg-blue-700 hover:text-white px-1 transition-colors">
+                        [About / Credits]
+                    </Link>
+                </li>
             </ul>
         </div>
 
@@ -48,7 +56,6 @@ function Footer() {
                 &copy; {currentYear} Student Name
             </p>
             <div className="mt-4 flex justify-end gap-2">
-                {/* Fake "Best Viewed" Badges */}
                 <div className="border border-black px-2 py-1 text-[10px] bg-yellow-200">
                     HTML 5
                 </div>
