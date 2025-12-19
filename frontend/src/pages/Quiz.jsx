@@ -11,16 +11,39 @@ function Quiz() {
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(5);
 
+  const shuffleArray = (array) => {
+  // Create a copy to avoid mutating the original data
+  const shuffled = [...array]; 
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+  };
+
   const startGame = (selectedDifficulty) => {
     setDifficulty(selectedDifficulty);
-    setCurrentQuestions(quizData[selectedDifficulty]);
+    
+    // 1. Get the raw list from data
+    const rawQuestions = quizData[selectedDifficulty];
+    
+    // 2. Shuffle the QUESTIONS order
+    const questionsShuffled = shuffleArray(rawQuestions);
+
+    // 3. Shuffle the OPTIONS inside each question
+    // We map over the questions to create a new array with shuffled options
+    const fullyShuffled = questionsShuffled.map((question) => ({
+      ...question,
+      options: shuffleArray(question.options)
+    }));
+
+    setCurrentQuestions(fullyShuffled);
     setCurrentQuestionIdx(0);
     setScore(0);
     setLives(5);
     setGameState('playing');
   };
 
-  // --- BUG FIX IS HERE ---
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
