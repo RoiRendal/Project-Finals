@@ -1,6 +1,6 @@
-import tigerImg   from '../assets/cats/tiger.jpg';
-import lionImg    from '../assets/cats/lion.jpg';
-import jaguarImg  from '../assets/cats/jaguar.jpg';
+import tigerImg       from '../assets/cats/tiger.jpg';
+import lionImg        from '../assets/cats/lion.jpg';
+import jaguarImg      from '../assets/cats/jaguar.jpg';
 import snowLeopardImg from '../assets/cats/snow-leopard.jpg';
 
 export const cats = [
@@ -75,7 +75,7 @@ export const cats = [
       roarVolume: "114 decibels"
     },
     funFacts: [
-        "They have an amazing jump, and have been recorded springing as far as 36 feet.",
+        "Lions have an amazing jump, and have been recorded springing as far as 36 feet.",
         "For some reason, the pregnant lioness will give birth to a cub away from the rest of the pride."
     ],
     sections: [

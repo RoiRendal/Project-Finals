@@ -75,7 +75,7 @@ function About() {
                 
                 <div className="flex gap-2 justify-center md:justify-start pt-2">
                     <span className="bg-blue-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 font-mono">IT314</span>
-                    <span className="bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 font-mono">FINALS</span>
+                    <span className="bg-green-600 text-white text-[10px] md:text-xs font-bold px-2 py-1 font-mono">PROJECT</span>
                 </div>
 
                 {/* SOCIAL LINKS: Flex-col on very small screens if needed, or flex-row wrap */}

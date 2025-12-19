@@ -50,7 +50,7 @@ function Footer() {
         {/* Credits */}
         <div className="text-right flex flex-col justify-end">
             <p className="text-xs font-bold">
-                IT314 FINAL PROJECT
+                IT314 PROJECT
             </p>
             <p className="text-xs mt-1">
                 &copy; {currentYear} Roi Rendal
