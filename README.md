@@ -42,7 +42,7 @@ This project utilizes the bleeding edge of the React ecosystem:
 ### 4. Design Philosophy (Web 1.0)
 *   **Brutalist UI:** High contrast, thick borders, hard shadows, and monospaced typography.
 *   **Responsive:** Mobile-first architecture ensures the "Terminal" look works on phones and desktops.
-*   **Tailwind Exclusive:** 100% of the styling is handled via utility classes (no external CSS files).
+*   **Tailwind Exclusive:** 100% of the styling is handled via utility classes.
 
 ## 🖥 Preview
 
