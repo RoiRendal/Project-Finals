@@ -9,7 +9,7 @@ export const cats = [
     attribution: "By Charles James Sharp, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=88142663",
     name: "Tiger",
     scientificName: "Panthera tigris",
-    description: "The tiger is a population of the Panthera tigris species. It ranks among the biggest wild cats alive today.",
+    description: "The tiger (Panthera tigris) is a large cat and a member of the genus Panthera native to Asia. It has a powerful, muscular body with a large head and paws, a long tail, and orange fur with black, mostly vertical stripes. It is traditionally classified into nine recent subspecies, though some recognise only two subspecies: mainland Asian tigers and the island tigers of the Sunda Islands.",
     image: tigerImg,
     stats: {
       lifespan: "10-15 years",
@@ -25,8 +25,8 @@ export const cats = [
       {
         title: "Physical Characteristics",
         content: [
-          "The tiger's coat is yellow to light orange, with stripes ranging from dark brown to black. The belly and the interior parts of the limbs are white, and the tail is orange with black rings.",
-          "Male tigers have an average total length of 270 to 310 cm (110 to 120 in) including the tail, while females measure 240 to 265 cm (94 to 104 in). The weight of males ranges from 180 to 258 kg (397 to 569 lb), while that of females ranges from 100 to 160 kg (220 to 350 lb)."
+          "The tiger has a typical felid morphology, with a muscular body, shortened legs, strong forelimbs with wide front paws, a large head, and a tail that is about half the length of the rest of its body. It has five digits, including a dewclaw, on the front feet and four on the back, all of which have retractile claws that are compact and curved and can reach 10 cm (3.9 in) long. The ears are rounded, and the eyes have a round pupil. The snout ends in a triangular, pink tip with small black dots, the number of which increases with age. The tiger's skull is robust, with a constricted front region, proportionally small elliptical orbits, long nasal bones, and a lengthened cranium with a large sagittal crest. It resembles a lion's skull but differs from it in the concave or flattened underside of the lower jaw and in its longer nasals. The tiger has 30 fairly robust teeth, and its somewhat curved canines are the longest in the cat family at 6.4–7.6 cm (2.5–3.0 in).",
+          "The tiger has a head-body length of 1.4–2.8 m (4 ft 7 in–9 ft 2 in) with a 0.6–1.1 m (2 ft 0 in–3 ft 7 in) tail and stands 0.8–1.1 m (2 ft 7 in–3 ft 7 in) at the shoulder. The Siberian and Bengal tigers are the largest. Male Bengal tigers weigh 200–260 kg (440–570 lb), and females weigh 100–160 kg (220–350 lb); island tigers are the smallest, likely due to insular dwarfism. Male Sumatran tigers weigh 100–140 kg (220–310 lb), and females weigh 75–110 kg (165–243 lb). The tiger is popularly thought to be the largest living felid species, but since tigers of the different subspecies and populations vary greatly in size and weight, the tiger's average size may be less than the lion's, while the largest tigers are bigger than their lion counterparts."
         ]
       },
       {
