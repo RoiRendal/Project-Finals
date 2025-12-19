@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 
 function AddCat() {
   const navigate = useNavigate();
@@ -163,6 +163,11 @@ const removeFunFact = (index) => {
             // TERMINAL_ID: USER_GUEST // MODE: WRITE
         </p>
       </div>
+
+      {/* RETURN BUTTON */}
+      <Link to="/" className="mb-8 inline-block bg-white border-2 border-black px-4 py-2 font-mono font-bold text-sm shadow-[4px_4px_0px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+            &lt;&lt; RETURN_TO_ROOT
+      </Link>
       
       {/* FORM CONTAINER */}
       <form onSubmit={handleSubmit} className="border-4 border-black bg-white p-4 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] space-y-8 md:space-y-10 relative">
@@ -341,6 +346,16 @@ const removeFunFact = (index) => {
             <button type="submit" className="w-full bg-green-500 text-black border-2 border-black py-3 md:py-4 font-mono font-black text-lg md:text-xl uppercase tracking-widest shadow-[6px_6px_0px_0px_#000] md:shadow-[8px_8px_0px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none hover:bg-green-400 transition-all flex items-center justify-center gap-2">
                 {isEditMode ? 'OVERWRITE_DATA' : 'INITIATE_UPLOAD'}
             </button>
+        </div>
+
+        {/* FOOTER ACTIONS */}
+        <div className="pt-6 border-t-4 border-black flex justify-between items-center">
+            <Link to="/" className="font-mono font-bold text-xs md:text-sm hover:underline decoration-2 decoration-blue-600">
+                &lt;&lt; RETURN_HOME
+            </Link>
+            <div className="font-mono text-[10px] md:text-xs text-gray-400">
+                END_OF_FILE
+            </div>
         </div>
 
       </form>

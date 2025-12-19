@@ -16,6 +16,11 @@ function About() {
         </p>
       </div>
 
+      {/* RETURN BUTTON */}
+      <Link to="/" className="mb-8 inline-block bg-white border-2 border-black px-4 py-2 font-mono font-bold text-sm shadow-[4px_4px_0px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+            &lt;&lt; RETURN_TO_ROOT
+      </Link>
+
       {/* MAIN CONTAINER: Reduced padding (p-4 vs p-10) */}
       <div className="border-4 border-black bg-white p-4 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative space-y-8 md:space-y-10">
         

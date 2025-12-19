@@ -77,6 +77,7 @@ function CatDetail() {
 
         {/* HEADER SECTION */}
         <div className="border-b-4 border-black pb-6 mb-8">
+
             <div className="flex flex-col md:flex-row gap-6 items-start">
                 
                 {/* TITLE & INFO */}
@@ -228,8 +229,13 @@ function CatDetail() {
         </div>
         
         {/* FOOTER OF DOSSIER */}
-        <div className="mt-12 pt-6 border-t-4 border-black text-center font-mono text-xs text-gray-500 uppercase">
-            /// END OF FILE {cat.id} /// AUTHORIZED PERSONNEL ONLY ///
+        <div className="mt-12 pt-6 border-t-4 border-black font-mono text-gray-500 uppercase">
+            <Link to="/" className="font-mono font-bold text-lg md:text-sm hover:underline decoration-2 decoration-blue-600">
+                &lt;&lt; RETURN_HOME
+            </Link>
+            <div className="text-xs text-center">
+                /// END OF FILE {cat.id} /// AUTHORIZED PERSONNEL ONLY ///
+            </div>
         </div>
 
       </div>
