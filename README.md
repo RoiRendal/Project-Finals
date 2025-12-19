@@ -4,9 +4,6 @@
 > **Version:** 1.0.0  
 > **Design Protocol:** Brutalist / Web 1.0
 
-### Homepage
-![Project Banner](https://github.com/RoiRendal/WildCatsWiki/blob/Documentations/Screenshots/Homepage.png)
-
 ## 📂 Project Overview
 
 **WildCatsWiki** is a static Single Page Application (SPA) built for the **IT314 Project**. It serves as a small digital encyclopedia for wild feline species, blending modern frontend technologies with a retro, high-contrast "Data Terminal" aesthetic.
@@ -47,6 +44,10 @@ This project utilizes the bleeding edge of the React ecosystem:
 *   **Responsive:** Mobile-first architecture ensures the "Terminal" look works on phones and desktops.
 *   **Tailwind Exclusive:** 100% of the styling is handled via utility classes (no external CSS files).
 
+## 🖥 Preview
+
+![Project Banner](https://github.com/RoiRendal/WildCatsWiki/blob/Documentations/Screenshots/Homepage.png)
+
 ## 🛠️ Installation & Setup
 
 To run this system locally on your machine:
@@ -74,21 +75,21 @@ To run this system locally on your machine:
 ```
 frontend/
 ├── src/
-│   ├── assets/          # Static Images & Icons
-│   ├── components/      # Reusable UI (Navbar, Footer)
-│   ├── data/            # Static JSON Data (cats, questions)
-│   ├── pages/           # Route Views
-│   │   ├── Home.jsx     # Directory Grid
-│   │   ├── CatDetail.jsx# The Dossier View
-│   │   ├── AddCat.jsx   # Create/Edit Form
-│   │   ├── Quiz.jsx     # Game Module
-│   │   └── About.jsx    # System Specs
-│   ├── App.jsx          # Main Layout & Routing
-│   ├── index.css        # Tailwind Implementaion
-│   └── main.jsx         # Entry Point
-├── index.html           # HTML Root
-├── package.json         # Dependencies
-└── vite.config.js       # Build Tool
+│   ├── assets/               # Static Images & Icons
+│   ├── components/           # Reusable UI (Navbar, Footer)
+│   ├── data/                 # Static JSON Data (cats, questions)
+│   ├── pages/                # Route Views
+│   │   ├── Home.jsx          # Directory Grid
+│   │   ├── CatDetail.jsx     # The Dossier View
+│   │   ├── AddCat.jsx        # Create/Edit Form
+│   │   ├── Quiz.jsx          # Game Module
+│   │   └── About.jsx         # System Specs
+│   ├── App.jsx               # Main Layout & Routing
+│   ├── index.css             # Tailwind Implementaion
+│   └── main.jsx              # Entry Point
+├── index.html                # HTML Root
+├── package.json              # Dependencies
+└── vite.config.js            # Build Tool
 ```
 
 <br></br>
