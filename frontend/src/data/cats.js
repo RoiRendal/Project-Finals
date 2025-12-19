@@ -30,7 +30,7 @@ export const cats = [
         ]
       },
       {
-        title: "Distribution and Habitat",
+        title: "Distribution & Habitat",
         content: [
           "The tiger historically ranged from eastern Turkey, northern Iran and Afghanistan to Central Asia and from northern Pakistan through the Indian subcontinent and Indochina to southeastern Siberia, Sumatra, Java and Bali. As of 2022, it inhabits less than 7% of its historical distribution and has a scattered range in the Indian subcontinent, the Indochinese Peninsula, Sumatra, northeastern China and the Russian Far East. As of 2020, India had the largest extent of global tiger habitat with 300,508 km2 (116,027 sq mi), followed by Russia with 195,819 km2 (75,606 sq mi).",
           "The tiger mainly lives in forest habitats and is highly adaptable Records in Central Asia indicate that it primarily inhabited Tugay riverine forests and hilly and lowland forests in the Caucasus. In the Amur-Ussuri region of Russia and China, it inhabits Korean pine and temperate broadleaf and mixed forests; riparian forests serve as dispersal corridors, providing food and water for both tigers and ungulates.",
@@ -39,7 +39,7 @@ export const cats = [
         ]
       },
       {
-        title: "Hunting and Diet",
+        title: "Hunting & Diet",
         content: [
           "Tigers are carnivores. They prefer hunting large ungulates such as chital, sambar, gaur, and to a lesser extent also barasingha, water buffalo, nilgai, serow and takin. Among the medium-sized prey species they frequently kill wild boar.",
           "They hunt primarily by sight and sound rather than smell. They typically hunt alone and ambush their prey as most other cats do, overpowering them from any angle, using their body size and strength to knock the prey off balance."
@@ -75,15 +75,44 @@ export const cats = [
       roarVolume: "114 decibels"
     },
     funFacts: [
-        "A lion's roar can be heard from 5 miles away.",
-        "Female lions do 90% of the hunting."
+        "They have an amazing jump, and have been recorded springing as far as 36 feet.",
+        "For some reason, the pregnant lioness will give birth to a cub away from the rest of the pride."
     ],
     sections: [
       {
-        title: "Social Structure",
+        title: "Physical Characteristics",
         content: [
-          "Lions are the most social of all wild felids, living in related groups with their offspring. Such a group is called a 'pride'. Groups of male lions are called 'coalitions'.",
-          "Females form the stable social unit in a pride and do not tolerate outside females. Membership only changes with the births and deaths of lionesses, although some females do leave and become nomadic."
+          "The lion is a muscular, broad-chested cat with a short, rounded head, a reduced neck, and round ears; males have broader heads. The fur varies in colour from light buff to silvery grey, yellowish red, and dark brown. The colours of the underparts are generally lighter. A newborn lion has dark spots, which fade as the cub reaches adulthood, although faint spots may still be seen on the legs and underparts. The tail of all lions ends in a dark, hairy tuft that, in some lions, conceals an approximately 5 mm (0.20 in)-long, hard \"spine\" or \"spur\" composed of dermal papillae. The functions of the spur are unknown. The tuft is absent at birth, develops at around 5 1⁄2 months of age, and is readily identifiable at the age of seven months.",
+          "Its skull is very similar to that of the tiger, although the frontal region is usually more depressed and flattened and has a slightly shorter postorbital region and broader nasal openings than those of the tiger. Due to the amount of skull variation in the two species, usually only the structure of the lower jaw can be used as a reliable indicator of species."
+        ]
+      },
+      {
+        title: "Distribution & Habitat",
+        content: [
+          "African lions live in scattered populations across sub-Saharan Africa. The lion prefers grassy plains and savannahs, scrub bordering rivers, and open woodlands with bushes. It rarely enters closed forests. On Mount Elgon, the lion has been recorded up to an elevation of 3,600 m (11,800 ft) and close to the snow line on Mount Kenya. Savannahs with an annual rainfall of 300 to 1,500 mm (12 to 59 in) make up the majority of lion habitat in Africa, estimated at 3,390,821 km² (1,309,203 sq mi) at most, but remnant populations are also present in tropical moist forests in West Africa and montane forests in East Africa. The Asiatic lion now survives only in and around Gir National Park in Gujarat, western India. Its habitat is a mixture of dry savannah forest and very dry, deciduous scrub forest.",
+          "In Africa, the range of the lion originally spanned most of the central African rainforest zone and the Sahara Desert. In the 1960s, it became extinct in North Africa, except in the southern part of Sudan.",
+          "During the mid-Holocene, around 8,000-6,000 years ago, the range of lions expanded into Southeastern and Eastern Europe, partially re-occupying the range of the now extinct cave lion. In Hungary, the modern lion was present from about 4,500 to 3,200 years Before Present. In Ukraine, the modern lion was present from about 6,400 to 2,000 years Before Present. In Greece, it was common, as reported by Herodotus in 480 BC; it was considered rare by 300 BC and extirpated by AD 100."
+        ]
+      },
+      {
+        title: "Hunting & Diet",
+        content: [
+          "The lion is a generalist hypercarnivore and is considered to be both an apex and keystone predator due to its wide prey spectrum. Its prey consists mainly of medium-sized to large ungulates, particularly blue wildebeest, plains zebra, African buffalo, gemsbok, and giraffe. It also frequently takes common warthog despite it being much smaller. In India, chital and sambar deer are the most common wild prey, while livestock contributes significantly to lion kills outside protected areas. It usually avoids adult elephants, rhinoceroses, and hippopotamuses and small prey like dik-diks, hyraxes, hares, and monkeys, and seldom consumes other predators.",
+          "Young lions first display stalking behaviour at around three months of age, although they do not participate in hunting until they are almost a year old and begin to hunt effectively when nearing the age of two. Single lions are capable of bringing down zebra and wildebeest, while larger prey like buffalo and giraffe are riskier. In Chobe National Park, large prides have been observed hunting African bush elephants up to around 15 years old in exceptional cases, with the victims being calves, juveniles, and even subadults. In typical group hunts, each lioness has a favoured position in the group, either stalking prey on the \"wing,\" then attacking, or moving a smaller distance in the centre of the group and capturing prey fleeing from other lionesses. Males attached to prides do not usually participate in group hunting. Some evidence suggests, however, that males are just as successful as females; they are typically solo hunters who ambush prey in small bushland. They join in the hunting of large, slower-moving prey like buffalo and even hunt them on their own. Moderately sized hunting groups generally have higher success rates than lone females and larger groups. Lions studied in Queen Elizabeth National Park increased their chances of success when hunting at night and on moonless nights, when the prey was solitary and the cover of bushes dense; the chances of success increased when they attacked from a distance of 20 m (66 ft) and with a grass cover of 80 cm (31 in) tall."
+        ]
+      },
+      {
+        title: "Conservation",
+        content: [
+          "In 2005, Lion Conservation Strategies were developed for West and Central Africa and East and Southern Africa. The strategies seek to maintain suitable habitat, ensure a sufficient wild prey base for lions, reduce factors that lead to further fragmentation of populations, and make lion-human coexistence sustainable. Lion depredation on livestock is significantly reduced in areas where herders keep livestock in improved enclosures. Such measures contribute to mitigating human-lion conflict.",
+          "The last refuge of the Asiatic lion population is the 1,412 km² (545 sq mi) Gir National Park and surrounding areas in the region of Saurashtra, or the Kathiawar Peninsula, in Gujarat State, India. The population has risen from approximately 180 lions in 1974 to about 400 in 2010. It is geographically isolated, which can lead to inbreeding and reduced genetic diversity. Since 2008, the Asiatic lion has been listed as Endangered on the IUCN Red List. By 2015, the population had grown to 523 individuals inhabiting an area of 7,000 km² (2,700 sq mi) in Saurashtra. In 2017, about 650 individuals were recorded during the Asiatic Lion Census."
+        ]
+      },
+      {
+        title: "Etymology",
+        content: [
+          "The English word \"lion\" is derived via Anglo-Norman \"liun\" from Latin \"leōnem\" (nominative: \"leō\"), which in turn was a borrowing from Ancient Greek \"λέων\" (léōn). The Hebrew word \"לָבִיא\" \"lavi\" may also be related. The generic name Panthera is traceable to the classical Latin word 'panthēra' and the ancient Greek word 'πάνθηρ' ('panther').",
+          ""
         ]
       }
     ]
@@ -114,14 +143,14 @@ export const cats = [
         ]
       },
       {
-        title: "Distribution and Habitat",
+        title: "Distribution & Habitat",
         content: [
           "In 1999, the jaguar's historic range at the turn of the 20th century was estimated at 19,000,000 km² (7,300,000 sq mi), stretching from the southern United States through Central America to southern Argentina. By the turn of the 21st century, its global range had decreased to about 8,750,000 km² (3,380,000 sq mi), with most declines occurring in the southern United States, northern Mexico, northern Brazil, and southern Argentina. Its present range extends from the United States and Mexico through Central America to South America, comprising Belize, Guatemala, Honduras, Nicaragua, Costa Rica, particularly on the Osa Peninsula, Panama, Colombia, Venezuela, Guyana, Suriname, French Guiana, Ecuador, Peru, Bolivia, Brazil, Paraguay, and Argentina. It is considered to be locally extinct in El Salvador and Uruguay.",
           "Jaguars have been occasionally sighted in Arizona, New Mexico, and Texas, with 62 accounts reported in the 20th century. Between 2012 and 2015, a male vagrant jaguar was recorded in 23 locations in the Santa Rita Mountains. Eight jaguars were photographed in the southwestern US between 1996 and 2024."
         ]
       },
       {
-        title: "Hunting and Diet",
+        title: "Hunting & Diet",
         content: [
           "The jaguar is an obligate carnivore and depends solely on flesh for its nutrient requirements. An analysis of 53 studies documenting the diet of the jaguar revealed that its prey ranges in weight from 1 to 130 kg (2.2 to 286.6 lb); it prefers prey weighing 45–85 kg (99–187 lb), with the capybara and the giant anteater being the most selected. When available, it also preys on marsh deer, southern tamandua, collared peccary, and black agouti. In floodplains, jaguars opportunistically take reptiles such as green anacondas, turtles, and caimans. Consumption of reptiles appears to be more frequent in jaguars than in other big cats. One remote population in the Brazilian Pantanal is recorded to primarily feed on aquatic reptiles and fish. The jaguar also preys on livestock in cattle ranching areas where wild prey is scarce. The daily food requirement of a captive jaguar weighing 34 kg (75 lb) was estimated at 1.4 kg (3.1 lb) of meat.",
           "The jaguar's bite force allows it to pierce the carapaces of the yellow-spotted Amazon river turtle and the yellow-footed tortoise. It employs an unusual killing method: it bites mammalian prey directly through the skull between the ears to deliver a fatal bite to the brain. It kills capybara by piercing its canine teeth through the temporal bones of its skull, breaking its zygomatic arch and mandible, and penetrating its brain, often through the ears. It has been hypothesized to be an adaptation to cracking open turtle shells; armored reptiles may have formed an abundant prey base for the jaguar following the late Pleistocene extinctions. However, this is disputed, as even in areas where jaguars prey on reptiles, they are still taken relatively infrequently compared to mammals in spite of their greater abundance."
@@ -155,7 +184,11 @@ export const cats = [
       speed: "58 km/h",
       weight: "51 kg",
       climbingAbility: "Excellent"
-    }
+    },
+    funFacts: [
+      "",
+      ""
+    ],
   }
   /* === Template ===
   {
